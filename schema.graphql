@@ -1,0 +1,28 @@
+type Organization {
+  id: Int
+  name: String
+  countryCode: String
+  firstName: String
+  lastName: String
+  email: String
+  kdUserId: String
+  isActive: Boolean
+}
+
+input RegistrationInput {
+  id: Int
+  name: String
+  countryCode: String
+  firstName: String
+  lastName: String
+  email: String
+}
+
+
+type Query {
+  getEmbedCode(organizationId: Int): String
+}
+
+type Mutation {
+  register(organization: RegistrationInput): Organization
+}
