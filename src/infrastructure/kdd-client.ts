@@ -75,3 +75,26 @@ export const register = async (organization: any = {}): Promise<IPartnerRegistra
   }
   return await api.post('partner/register', { json }).json()
 }
+
+export interface IEmbedCodeResponse {
+  embedUrl: string
+}
+
+export const getEmbedCode = async ({ firstName = '', lastName = '', email = '', partnerParameters = {} }, userId): Promise<IEmbedCodeResponse> => {
+  const json = {
+    userId,
+    firstName,
+    lastName,
+    email,
+    partnerParameters: {
+      ...partnerParameters
+    }
+  }
+  return api.post('partner/embed', { json }).json()
+}
+
+export {
+  IPartnerIsReadyResponse,
+  IPartnerRegistrationResponse,
+  ISessionInformationResponse
+}

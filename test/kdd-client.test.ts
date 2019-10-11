@@ -22,6 +22,7 @@ test(`isPartnerReady should fail with a bogus partner id`, async () => {
 
 test(`isPartnerRegistered should fail with a bogus partner id`, async () => {
   const result = await isPartnerRegistered(1234)
+  console.log(result)
   expect(result).toBeFalsy()
 })
 

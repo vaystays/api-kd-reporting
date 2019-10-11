@@ -1,17 +1,23 @@
 {
-  "name": "minimal",
+  "name": "api-kd-reporting",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "DEBUG=\"monk:queries\" npx ts-node-dev ./src --watch",
     "test": "jest",
     "dev": "npm-run-all --parallel start playground",
     "playground": "graphql playground",
     "deploy": "git push heroku master"
   },
   "keywords": [],
-  "author": "Devan Beitel",
+  "author": "Tyler Garlick",
+  "contributors": [
+    {
+      "name": "Tyler Garlick",
+      "email": "tyler@directsoftware.com"
+    }
+  ],
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.1.0",
@@ -22,7 +28,8 @@
     "monk-middleware-debug": "^0.2.0",
     "monk-middleware-timestamps": "^1.0.4",
     "ts-node": "6.2.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.6.4",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "@types/jest": "^24.0.18",
