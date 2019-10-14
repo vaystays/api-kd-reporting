@@ -1,4 +1,9 @@
-import { save, getEmbedCode, IDbOrganization, IOrganization, IBasicOrganization } from '../../src/services/organization'
+import {
+  save,
+  getEmbedCode,
+  IDbOrganization,
+  IBasicOrganization
+} from '../../src/services/organization'
 import { organizations } from '../../src/infrastructure/db'
 import uuid from 'uuid'
 
